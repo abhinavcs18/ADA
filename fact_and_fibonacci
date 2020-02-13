@@ -1,0 +1,36 @@
+#include <stdio.h>
+int fact(int n);
+int fibo(int n);
+void main()
+{
+    int n,ch,f;
+    printf("Enter option\n1:To find the factorial of a number\n2:To find nth Fibonacci number\n");
+    scanf("%d",&ch);
+    printf("Enter the number");
+    scanf("%d",n);
+    switch(ch)
+    {
+        case 1: f = fact(n);
+                printf("Factorial is %d",f);
+                break;
+        case 2: f= fibo(n);
+                printf("nth fibonacci number is %d",f);
+                break;
+    }
+}
+int fact(int n)
+{
+    if(n==0)
+    return 1;
+    else
+    return n*fact(n-1);
+}
+int fibo(int n)
+{
+    if(n==1)
+    return 0;
+    else if(n==2)
+    return 1;
+    else 
+    return (fibo(n-1)+fibo(n-2));
+}
